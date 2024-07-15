@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Previous Searches</title>
+</head>
+<body>
+    <h1>Previous Searches</h1>
+    <ul>
+        {% for search in searches %}
+        <li>
+            <a href="{% url 'search_results' search.id %}">{{ search.keyword }}</a>
+            <p>Created at: {{ search.created_at }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'search_news' %}">New Search</a>
+</body>
+</html>
